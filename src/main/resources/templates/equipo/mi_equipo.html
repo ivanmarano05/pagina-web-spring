@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mi Equipo Mundialista</title>
+        <link rel="icon" type="image/x-icon" href="/assets/copa.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/equipo/index">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/equipo/crearEquipo">Nuevo Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/equipo/miEquipo">Mi Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/equipo/listaEquipos">Ver Equipos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+        
+		        <div class="card" style="width: 100%;">
+		 
+					<div class="card-body">
+					    <h5 class="card-title">MI EQUIPO</h5>
+					    <p class="card-text">Los datos de mi equipo son:</p>
+					    
+					    <p class="card-text"> NOMBRE: <span th:text="${equipo.nombre}" /></span>
+					    
+					    <p class="card-text"> USUARIO: <span th:text="${usuario.nombre}" /></span>
+					    
+					    <p class="card-text"> PELOTA: <span th:text="${pelota.nombre}" /></span>
+					    
+					    <p class="card-text"> 
+							<span>
+					    		<img
+								th:alt="${pelota.imagen}"
+								th:src="@{'/images/' + ${pelota.imagen}}"
+								style="max-width:15%"
+								>
+							</span>
+						</p>
+					    
+					    <p class="card-text"> JUGADORES: 
+					    
+					    <table class="table table-sm">
+										  <thead>
+										  
+										  <tr>
+										      <th scope="col">Nombre</th>
+										      <th scope="col">País</th>
+										      <th scope="col">Posición</th>
+										  </tr>
+										   
+										  </thead>
+							  
+									  <tbody>					  
+									  	
+										<tr th:each="j : ${jugadores}">										
+											<td th:text="${j.nombre}"></td>
+											<td th:text="${j.pais}"></td>
+											<td th:text="${j.posicion}"></td>											
+										</tr>
+									  
+									  </tbody>
+									  
+						</table>
+						
+						<a href="/equipo/crearEquipo" class="btn btn-primary">Editar equipo</a>
+
+					</div>
+		
+				</div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
