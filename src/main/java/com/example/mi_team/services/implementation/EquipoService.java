@@ -64,12 +64,6 @@ public class EquipoService implements IEquipoService {
 		
 	};
 	
-//	public EquipoModelo traerPorNombreUsuario(String nombreUsuario) {		
-//		
-//		return equipoConverter.entityToModel(equipoRepository.findByNombreAndFetchUsuarioEagerly(nombreUsuario));
-//		
-//	};
-	
 	public EquipoModelo traerEquipoCompletoPorId(int id) {
 		
 		List<EquipoEntidad> listaEntidad = getEquiposCompletos();
@@ -94,15 +88,9 @@ public class EquipoService implements IEquipoService {
 		
 		for (EquipoEntidad e: equipos) {
 			
-//			Avatar avatar = avatarRepository.findById(p.getAvatar().getId());
-			
 			Set<JugadorEntidad> jugadores = jugadoresDelEquipo(e.getId());
 			
 			PelotaEntidad pelota = pelotaDelEquipoEntidad(e.getId());
-			
-//			if(avatar != null) {
-//				e.setAvatar(avatar);
-//			}
 			
 			if(jugadores != null) {
 				e.setJugadores(jugadores);

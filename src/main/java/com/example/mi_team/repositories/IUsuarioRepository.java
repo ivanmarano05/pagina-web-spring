@@ -14,8 +14,5 @@ public interface IUsuarioRepository extends
 	public abstract UsuarioEntidad findByNombre(String nombre);
 	
 	public abstract UsuarioEntidad findById(int id);
-	
-//	@Query("UPDATE UsuarioEntidad u SET u.equipo = (:idEquipo) WHERE u.nombre = (:nombreUsuario)")
-//	public abstract UsuarioEntidad asignarEquipo(int idEquipo, String nombreUsuario);
 
 }

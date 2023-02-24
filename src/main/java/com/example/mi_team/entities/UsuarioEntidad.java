@@ -20,7 +20,6 @@ public class UsuarioEntidad {
 	
 	private String nombre;
 	
-	//Entidad no propietaria
 	@OneToOne(mappedBy = "usuario")
 	@JsonIgnore
 	private EquipoEntidad equipo;

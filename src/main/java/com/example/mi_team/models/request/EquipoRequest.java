@@ -10,14 +10,12 @@ public class EquipoRequest {
 	@JsonProperty("Nombre")
 	private String nombre;
 	
-	//DATOS PELOTA
 	@JsonProperty("Pelota")
 	private String pelota;
 	
 	@JsonProperty("Imagen")
 	private String imagen;
 	
-	//DATOS USUARIO
 	@JsonProperty("Usuario")
 	private String usuario;
 	

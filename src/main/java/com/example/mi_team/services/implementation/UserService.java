@@ -50,9 +50,6 @@ public class UserService implements UserDetailsService, IUserService {
 	@Override
 	public com.example.mi_team.entities.User insertOrUpdate(com.example.mi_team.entities.User usuario) {
 		
-//		System.out.println("Usuario en servicio: " + usuario.getUsername());
-//		System.out.println("Contraseña en servicio: " + usuario.getPassword());
-		
 		userRepository.save(usuario);
 		
 		return usuario;

@@ -13,10 +13,6 @@ import com.example.mi_team.entities.EquipoEntidad;
 public interface IEquipoRepository extends 
 						JpaRepository<EquipoEntidad, Serializable> {
 	
-	//Metodos que se pueden llamar desde el controlador :) 
-	//Si se utilizan nombres standar como findBy, Order, GroupBy, etc no hace falta 
-	//desarrollar las consultas,tambien se puede hacer buscarPorNombre, pero
-	//con esos nombres deberas programarlo personalmente
 	public abstract EquipoEntidad findByNombre(String nombre);
 	
 	public abstract EquipoEntidad findById(int id);
@@ -29,14 +25,5 @@ public interface IEquipoRepository extends
 	
 	@Query("SELECT e FROM EquipoEntidad e JOIN FETCH e.usuario WHERE e.id = (:idUsuario)")
 	public abstract EquipoEntidad findByIdAndFetchUsuarioEagerly(@Param("idUsuario") int idUsuario);
-	
-//	@Query("UPDATE EquipoEntidad e SET e.id = (:idUsuario) WHERE e.id = (:idActual)")
-//	public abstract EquipoEntidad actualizarID(@Param("idActual") int idActual, @Param("idUsuario") int idUsuario);
-	
-//	@Query("SELECT e FROM EquipoEntidad e JOIN FETCH e.usuario WHERE e.nombre = (:nombreUsuario)")
-//	public abstract EquipoEntidad findByNombreAndFetchUsuarioEagerly(@Param("nombreUsuario") String nombreUsuario);
-	
-//	@Query("UPDATE EquipoEntidad e SET e.pelota = (:idPelota) WHERE e.id = (:idEquipo)")
-//	public abstract EquipoEntidad insertarPelota(@Param("idEquipo") int idEquipo, @Param("idPelota") int idPelota);
 	
 }

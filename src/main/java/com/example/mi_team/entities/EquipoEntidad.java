@@ -8,8 +8,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -24,18 +22,14 @@ import org.hibernate.annotations.UpdateTimestamp;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-//@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name = "equipo")
 public class EquipoEntidad {
 
-	//columnas que no estan en models
 	@Id
 	private int id;
 	
-	//Las mismas de la capa models:
 	@Column(name = "nombre")
 	private String nombre;
 	
@@ -60,7 +54,6 @@ public class EquipoEntidad {
 	@JsonIgnore
 	private UsuarioEntidad usuario;
 	
-	//Nuevas que se suelen usar
 	@Column(name = "creado")
 	@CreationTimestamp
 	private LocalDateTime createdAt;
@@ -193,12 +186,6 @@ public class EquipoEntidad {
 	public void setUsuario(UsuarioEntidad usuario) {
 		this.usuario = usuario;
 	}
-
-//	@Override
-//	public String toString() {
-//		return "EquipoEntidad [id=" + id + ", nombre=" + nombre + ", pelota=" + pelota + ", jugadores=" + jugadores
-//				+ ", usuario=" + usuario + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
-//	}
 	
 	@Override
 	public String toString() {

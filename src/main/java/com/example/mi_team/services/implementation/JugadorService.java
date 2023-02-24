@@ -32,14 +32,8 @@ public class JugadorService implements IJugadorService {
 		List<JugadorEntidad> jugadores = new LinkedList<>();
 		
 		jugadores = jugadorRepository.findAll(Sort.by(Sort.Direction.ASC,"id"));
-		
-//		for (JugadorEntidad j : jugadores) {
-//			System.out.println(j.getNombre());
-//		}
 			
 		return jugadores;
-		
-//		return jugadorRepository.findAll(Sort.by(Sort.Direction.ASC,"id"));
 	}
 	
 	public JugadorModelo traerPorId(int id) {

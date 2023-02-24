@@ -16,7 +16,6 @@ public class JugadorModelo {
 
 	private Set<EquipoModelo> equipos = new HashSet<>();
 
-
 	public JugadorModelo() {
 		
 	}

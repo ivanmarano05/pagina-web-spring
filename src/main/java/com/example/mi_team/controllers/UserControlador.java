@@ -61,16 +61,6 @@ public class UserControlador {
          return ViewRouteHelper.USER_LOGOUT; 
     }
     
-//    @GetMapping("/logout")  
-//    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {  
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();  
-//        if (auth != null) {      
-//           new SecurityContextLogoutHandler().logout(request, response, auth);  
-//        }
-//
-//         return ViewRouteHelper.USER_LOGOUT; 
-//    }
-    
 	@GetMapping("/loginsuccess")
 	public String loginCheck() {
 		return "redirect:/equipo/index";
@@ -89,11 +79,9 @@ public class UserControlador {
 		
 		Boolean esRepetido = false;
 		
-		for (UsuarioEntidad usuarioEntidad : listaUsuarios) { 
-			System.out.println("Usuario: " + usuarioEntidad.getNombre());
+		for (UsuarioEntidad usuarioEntidad : listaUsuarios) {
 			
 			if(usuarioEntidad.getNombre().equals(usuario)) {
-				System.out.println("Hay repetido");
 				esRepetido = true;
 			}
 		}
@@ -101,8 +89,6 @@ public class UserControlador {
 		ModelAndView mV = new ModelAndView();
 		
 		if(esRepetido) {
-			
-			System.out.println("El usuario no se insertó por ser repetido");
 			
 			mV.setViewName(ViewRouteHelper.USER_CREARUSUARIO);
 			mV.addObject("texto", "USUARIO REPETIDO. ELIGE OTRO USERNAME");
@@ -113,10 +99,6 @@ public class UserControlador {
 			
 			BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
 			String passEncriptado = pe.encode(password);
-			
-			System.out.println("Usuario: " + usuario);
-			System.out.println("Contraseña: " + password);
-			System.out.println("Contraseña encriptada: " + passEncriptado);
 			
 			com.example.mi_team.entities.User usuarioCompleto = new com.example.mi_team.entities.User();
 			

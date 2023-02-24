@@ -28,8 +28,6 @@ public interface IEquipoService {
 	
 	public EquipoModelo traerEquipoCompletoPorId(int id);
 	
-//	public EquipoModelo traerPorNombreUsuario(String nombreUsuario);
-	
 	public List<EquipoModelo> getAllModel();
 	
 	public Set<JugadorEntidad> jugadoresDelEquipo(int id);
@@ -44,5 +42,4 @@ public interface IEquipoService {
 	
 	public List<EquipoEntidad> getEquiposCompletos();
 	
-//	public EquipoModelo insertarPelota(EquipoModelo equipoModelo, PelotaModelo pelotaModelo);
 }
