@@ -39,7 +39,3 @@ Finalmente, quedan adjuntados los diagramas de clases y de entidad-relación par
 TESTS
 
 Los tests fueron cubiertos en un 94% de su totalidad, incluyendo controladores, servicios, entidades y modelos, entre otras.
-
-COMENTARIO
-
-Al momento de desloguearse, el usuario se desloguea correctamente pero aparece el error de navegador "ERR_TOO_MANY_REDIRECTIONS".
